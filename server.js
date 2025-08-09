@@ -4,14 +4,14 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Enable CORS for CSV file access
+
 const cors = require('cors');
 app.use(cors());
 
-// Serve static files from public directory
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// API endpoint to serve CSV data
+
 app.get('/api/csv', (req, res) => {
     try {
         const csvPath = path.join(__dirname, 'Table_Input.csv');
