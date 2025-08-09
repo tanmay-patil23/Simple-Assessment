@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Loyalty - Table Processing Assessment</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- PapaParse for CSV parsing -->
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Simple Loyalty - Table Processing Assessment</h1>
+            <p class="subtitle">Dynamic CSV Processing & Calculations</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Loading indicator -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading CSV data...</p>
+            </div>
+
+            <!-- Error message -->
+            <div id="error" class="error" style="display: none;">
+                <p>❌ Error loading CSV data. Please check the console for details.</p>
+            </div>
+
+            <!-- Table 1 Section -->
+            <section class="table-section" id="table1Section" style="display: none;">
+                <div class="section-header">
+                    <h2>Table 1</h2>
+                    <p class="table-description">Data loaded dynamically from Table_Input.csv</p>
+                </div>
+                <div class="card">
+                    <div class="card__body">
+                        <div class="table-container">
+                            <table class="data-table" id="dataTable">
+                                <thead id="tableHead">
+                                    <!-- Headers will be populated dynamically -->
+                                </thead>
+                                <tbody id="tableBody">
+                                    <!-- Data will be populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Table 2 Section -->
+            <section class="calculations-section" id="table2Section" style="display: none;">
+                <div class="section-header">
+                    <h2>Table 2</h2>
+                    <p class="table-description">Calculated values from Table 1 data</p>
+                </div>
+                <div class="card">
+                    <div class="card__body">
+                        <table class="calculations-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="calculation-row">
+                                    <td class="category">Alpha</td>
+                                    <td class="value" id="alphaValue">-</td>
+                                </tr>
+                                <tr class="calculation-row">
+                                    <td class="category">Beta</td>
+                                    <td class="value" id="betaValue">-</td>
+                                </tr>
+                                <tr class="calculation-row">
+                                    <td class="category">Charlie</td>
+                                    <td class="value" id="charlieValue">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Calculation formulas for reference -->
+                        <div class="formulas">
+                            <h4>Formulas:</h4>
+                            <ul>
+                                <li><strong>Alpha:</strong> A5 + A20</li>
+                                <li><strong>Beta:</strong> A15 / A7 (rounded down)</li>
+                                <li><strong>Charlie:</strong> A13 * A12</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Debug Section -->
+            <section class="debug-section" id="debugSection" style="display: none;">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🔍 Debug Information</h3>
+                        <div id="debugInfo"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
